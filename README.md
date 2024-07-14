@@ -1,6 +1,6 @@
-# dewakoding_kasir
+# Kasir
 
-A new Flutter project.
+For Customer Local SME
 
 ## Getting Started
 
