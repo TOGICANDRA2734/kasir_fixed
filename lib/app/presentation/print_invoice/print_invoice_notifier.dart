@@ -83,18 +83,37 @@ class PrintInvoiceNotifier extends AppProvider {
     // final Image? image = decodeImage(imageBytes);
     // bytes += ticket.image(image);
 
-    if (_settingStore?.shop?.isNotEmpty ?? false) bytes += ticket.text(_settingStore?.shop ?? '-',
-        styles: PosStyles(
-          align: PosAlign.center,
-          height: PosTextSize.size2,
-          width: PosTextSize.size2,
-        ));
+    if (_settingStore?.shop?.isNotEmpty ?? false) {
+      String shopName = _settingStore?.shop ?? '-';
+      if (shopName.contains('Tarik')) {
+        List<String> parts = shopName.split('Tarik');
+        bytes += ticket.text(parts[0].trim(),
+            styles: PosStyles(
+              align: PosAlign.center,
+              height: PosTextSize.size2,
+              width: PosTextSize.size2,
+            ));
+        bytes += ticket.text('Tarik',
+            styles: PosStyles(
+              align: PosAlign.center,
+              height: PosTextSize.size2,
+              width: PosTextSize.size2,
+            ));
+      } else {
+        bytes += ticket.text(shopName,
+            styles: PosStyles(
+              align: PosAlign.center,
+              height: PosTextSize.size2,
+              width: PosTextSize.size2,
+            ));
+      }
+    }
     if (_settingStore?.address?.isNotEmpty ?? false)
       bytes += ticket.text(_settingStore!.address!,
           styles: PosStyles(align: PosAlign.center));
     if (_settingStore?.phone?.isNotEmpty ?? false)
-      bytes +=
-          ticket.text('Telp : '+_settingStore!.phone!, styles: PosStyles(align: PosAlign.center));
+      bytes += ticket.text('Telp : ' + _settingStore!.phone!,
+          styles: PosStyles(align: PosAlign.center));
     bytes += ticket.feed(1);
     bytes += ticket.text(date, styles: PosStyles(align: PosAlign.center));
 

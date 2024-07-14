@@ -20,6 +20,11 @@ class LoginScreen extends AppWidget<LoginNotifier, void, void> {
                 onPressed: () => _onPressSettingBaseUrl(context),
               ),
             ),
+            Image(
+              image: AssetImage('assets/logo.png'),
+              height: 125,
+              fit: BoxFit.fill,
+            ),
             Expanded(
                 child: Center(
                     child: Text(
@@ -92,7 +97,8 @@ class LoginScreen extends AppWidget<LoginNotifier, void, void> {
             Container(
                 width: double.maxFinite,
                 child: FilledButton(
-                    onPressed: () => _onPressSaveBaseUrl(context), child: Text("Simpan Base URL"))),
+                    onPressed: () => _onPressSaveBaseUrl(context),
+                    child: Text("Simpan Base URL"))),
           ],
         ));
   }

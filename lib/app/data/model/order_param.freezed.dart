@@ -33,10 +33,7 @@ mixin _$OrderParam {
   TResult when<TResult extends Object?>({
     required TResult Function(
             String name,
-            String? email,
-            String gender,
-            String? birthday,
-            String? phone,
+            @JsonKey(name: 'no_meja') String noMeja,
             @JsonKey(name: 'total_price') int totalPrice,
             String? notes,
             @JsonKey(name: 'payment_method_id') int paymentMethodId,
@@ -53,10 +50,7 @@ mixin _$OrderParam {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
             String name,
-            String? email,
-            String gender,
-            String? birthday,
-            String? phone,
+            @JsonKey(name: 'no_meja') String noMeja,
             @JsonKey(name: 'total_price') int totalPrice,
             String? notes,
             @JsonKey(name: 'payment_method_id') int paymentMethodId,
@@ -73,10 +67,7 @@ mixin _$OrderParam {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             String name,
-            String? email,
-            String gender,
-            String? birthday,
-            String? phone,
+            @JsonKey(name: 'no_meja') String noMeja,
             @JsonKey(name: 'total_price') int totalPrice,
             String? notes,
             @JsonKey(name: 'payment_method_id') int paymentMethodId,
@@ -138,10 +129,7 @@ abstract class _$$OrderParamModelImplCopyWith<$Res> {
   @useResult
   $Res call(
       {String name,
-      String? email,
-      String gender,
-      String? birthday,
-      String? phone,
+      @JsonKey(name: 'no_meja') String noMeja,
       @JsonKey(name: 'total_price') int totalPrice,
       String? notes,
       @JsonKey(name: 'payment_method_id') int paymentMethodId,
@@ -162,10 +150,7 @@ class __$$OrderParamModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? name = null,
-    Object? email = freezed,
-    Object? gender = null,
-    Object? birthday = freezed,
-    Object? phone = freezed,
+    Object? noMeja = null,
     Object? totalPrice = null,
     Object? notes = freezed,
     Object? paymentMethodId = null,
@@ -178,22 +163,10 @@ class __$$OrderParamModelImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      gender: null == gender
-          ? _value.gender
-          : gender // ignore: cast_nullable_to_non_nullable
+      noMeja: null == noMeja
+          ? _value.noMeja
+          : noMeja // ignore: cast_nullable_to_non_nullable
               as String,
-      birthday: freezed == birthday
-          ? _value.birthday
-          : birthday // ignore: cast_nullable_to_non_nullable
-              as String?,
-      phone: freezed == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as String?,
       totalPrice: null == totalPrice
           ? _value.totalPrice
           : totalPrice // ignore: cast_nullable_to_non_nullable
@@ -227,10 +200,7 @@ class __$$OrderParamModelImplCopyWithImpl<$Res>
 class _$OrderParamModelImpl implements OrderParamModel {
   const _$OrderParamModelImpl(
       {required this.name,
-      this.email,
-      required this.gender,
-      this.birthday,
-      this.phone,
+      @JsonKey(name: 'no_meja') required this.noMeja,
       @JsonKey(name: 'total_price') required this.totalPrice,
       this.notes,
       @JsonKey(name: 'payment_method_id') required this.paymentMethodId,
@@ -246,14 +216,13 @@ class _$OrderParamModelImpl implements OrderParamModel {
 
   @override
   final String name;
+// String email,
   @override
-  final String? email;
-  @override
-  final String gender;
-  @override
-  final String? birthday;
-  @override
-  final String? phone;
+  @JsonKey(name: 'no_meja')
+  final String noMeja;
+// required String gender,
+// String? birthday,
+// String? phone,
   @override
   @JsonKey(name: 'total_price')
   final int totalPrice;
@@ -281,7 +250,7 @@ class _$OrderParamModelImpl implements OrderParamModel {
 
   @override
   String toString() {
-    return 'OrderParam.model(name: $name, email: $email, gender: $gender, birthday: $birthday, phone: $phone, totalPrice: $totalPrice, notes: $notes, paymentMethodId: $paymentMethodId, paidAmount: $paidAmount, changeAmount: $changeAmount, items: $items)';
+    return 'OrderParam.model(name: $name, noMeja: $noMeja, totalPrice: $totalPrice, notes: $notes, paymentMethodId: $paymentMethodId, paidAmount: $paidAmount, changeAmount: $changeAmount, items: $items)';
   }
 
   @override
@@ -290,11 +259,7 @@ class _$OrderParamModelImpl implements OrderParamModel {
         (other.runtimeType == runtimeType &&
             other is _$OrderParamModelImpl &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.gender, gender) || other.gender == gender) &&
-            (identical(other.birthday, birthday) ||
-                other.birthday == birthday) &&
-            (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.noMeja, noMeja) || other.noMeja == noMeja) &&
             (identical(other.totalPrice, totalPrice) ||
                 other.totalPrice == totalPrice) &&
             (identical(other.notes, notes) || other.notes == notes) &&
@@ -312,10 +277,7 @@ class _$OrderParamModelImpl implements OrderParamModel {
   int get hashCode => Object.hash(
       runtimeType,
       name,
-      email,
-      gender,
-      birthday,
-      phone,
+      noMeja,
       totalPrice,
       notes,
       paymentMethodId,
@@ -335,10 +297,7 @@ class _$OrderParamModelImpl implements OrderParamModel {
   TResult when<TResult extends Object?>({
     required TResult Function(
             String name,
-            String? email,
-            String gender,
-            String? birthday,
-            String? phone,
+            @JsonKey(name: 'no_meja') String noMeja,
             @JsonKey(name: 'total_price') int totalPrice,
             String? notes,
             @JsonKey(name: 'payment_method_id') int paymentMethodId,
@@ -350,8 +309,8 @@ class _$OrderParamModelImpl implements OrderParamModel {
             int quantity, @JsonKey(name: 'unit_price') int unitPrice)
         itemModel,
   }) {
-    return model(name, email, gender, birthday, phone, totalPrice, notes,
-        paymentMethodId, paidAmount, changeAmount, items);
+    return model(name, noMeja, totalPrice, notes, paymentMethodId, paidAmount,
+        changeAmount, items);
   }
 
   @override
@@ -359,10 +318,7 @@ class _$OrderParamModelImpl implements OrderParamModel {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
             String name,
-            String? email,
-            String gender,
-            String? birthday,
-            String? phone,
+            @JsonKey(name: 'no_meja') String noMeja,
             @JsonKey(name: 'total_price') int totalPrice,
             String? notes,
             @JsonKey(name: 'payment_method_id') int paymentMethodId,
@@ -374,8 +330,8 @@ class _$OrderParamModelImpl implements OrderParamModel {
             @JsonKey(name: 'unit_price') int unitPrice)?
         itemModel,
   }) {
-    return model?.call(name, email, gender, birthday, phone, totalPrice, notes,
-        paymentMethodId, paidAmount, changeAmount, items);
+    return model?.call(name, noMeja, totalPrice, notes, paymentMethodId,
+        paidAmount, changeAmount, items);
   }
 
   @override
@@ -383,10 +339,7 @@ class _$OrderParamModelImpl implements OrderParamModel {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             String name,
-            String? email,
-            String gender,
-            String? birthday,
-            String? phone,
+            @JsonKey(name: 'no_meja') String noMeja,
             @JsonKey(name: 'total_price') int totalPrice,
             String? notes,
             @JsonKey(name: 'payment_method_id') int paymentMethodId,
@@ -400,8 +353,8 @@ class _$OrderParamModelImpl implements OrderParamModel {
     required TResult orElse(),
   }) {
     if (model != null) {
-      return model(name, email, gender, birthday, phone, totalPrice, notes,
-          paymentMethodId, paidAmount, changeAmount, items);
+      return model(name, noMeja, totalPrice, notes, paymentMethodId, paidAmount,
+          changeAmount, items);
     }
     return orElse();
   }
@@ -448,10 +401,7 @@ class _$OrderParamModelImpl implements OrderParamModel {
 abstract class OrderParamModel implements OrderParam {
   const factory OrderParamModel(
       {required final String name,
-      final String? email,
-      required final String gender,
-      final String? birthday,
-      final String? phone,
+      @JsonKey(name: 'no_meja') required final String noMeja,
       @JsonKey(name: 'total_price') required final int totalPrice,
       final String? notes,
       @JsonKey(name: 'payment_method_id') required final int paymentMethodId,
@@ -462,11 +412,11 @@ abstract class OrderParamModel implements OrderParam {
   factory OrderParamModel.fromJson(Map<String, dynamic> json) =
       _$OrderParamModelImpl.fromJson;
 
-  String get name;
-  String? get email;
-  String get gender;
-  String? get birthday;
-  String? get phone;
+  String get name; // String email,
+  @JsonKey(name: 'no_meja')
+  String get noMeja; // required String gender,
+// String? birthday,
+// String? phone,
   @JsonKey(name: 'total_price')
   int get totalPrice;
   String? get notes;
@@ -585,10 +535,7 @@ class _$OrderParamItemModelImpl implements OrderParamItemModel {
   TResult when<TResult extends Object?>({
     required TResult Function(
             String name,
-            String? email,
-            String gender,
-            String? birthday,
-            String? phone,
+            @JsonKey(name: 'no_meja') String noMeja,
             @JsonKey(name: 'total_price') int totalPrice,
             String? notes,
             @JsonKey(name: 'payment_method_id') int paymentMethodId,
@@ -608,10 +555,7 @@ class _$OrderParamItemModelImpl implements OrderParamItemModel {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
             String name,
-            String? email,
-            String gender,
-            String? birthday,
-            String? phone,
+            @JsonKey(name: 'no_meja') String noMeja,
             @JsonKey(name: 'total_price') int totalPrice,
             String? notes,
             @JsonKey(name: 'payment_method_id') int paymentMethodId,
@@ -631,10 +575,7 @@ class _$OrderParamItemModelImpl implements OrderParamItemModel {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             String name,
-            String? email,
-            String gender,
-            String? birthday,
-            String? phone,
+            @JsonKey(name: 'no_meja') String noMeja,
             @JsonKey(name: 'total_price') int totalPrice,
             String? notes,
             @JsonKey(name: 'payment_method_id') int paymentMethodId,

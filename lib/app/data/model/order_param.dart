@@ -9,10 +9,12 @@ part 'order_param.g.dart';
 sealed class OrderParam with _$OrderParam {
   const factory OrderParam.model(
       {required String name,
-      String? email,
-      required String gender,
-      String? birthday,
-      String? phone,
+      // String email,
+      @JsonKey(name: 'no_meja') required String noMeja,
+
+      // required String gender,
+      // String? birthday,
+      // String? phone,
       @JsonKey(name: 'total_price') required int totalPrice,
       String? notes,
       @JsonKey(name: 'payment_method_id')

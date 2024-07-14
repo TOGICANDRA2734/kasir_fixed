@@ -10,10 +10,7 @@ _$OrderParamModelImpl _$$OrderParamModelImplFromJson(
         Map<String, dynamic> json) =>
     _$OrderParamModelImpl(
       name: json['name'] as String,
-      email: json['email'] as String?,
-      gender: json['gender'] as String,
-      birthday: json['birthday'] as String?,
-      phone: json['phone'] as String?,
+      noMeja: json['no_meja'] as String,
       totalPrice: (json['total_price'] as num).toInt(),
       notes: json['notes'] as String?,
       paymentMethodId: (json['payment_method_id'] as num).toInt(),
@@ -29,10 +26,7 @@ Map<String, dynamic> _$$OrderParamModelImplToJson(
         _$OrderParamModelImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'email': instance.email,
-      'gender': instance.gender,
-      'birthday': instance.birthday,
-      'phone': instance.phone,
+      'no_meja': instance.noMeja,
       'total_price': instance.totalPrice,
       'notes': instance.notes,
       'payment_method_id': instance.paymentMethodId,

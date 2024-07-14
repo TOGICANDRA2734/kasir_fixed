@@ -11,10 +11,7 @@ _$OrderResponseModelImpl _$$OrderResponseModelImplFromJson(
     _$OrderResponseModelImpl(
       id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String,
-      email: json['email'] as String?,
-      gender: json['gender'] as String,
-      birthday: json['birthday'] as String?,
-      phone: json['phone'] as String?,
+      noMeja: json['no_meja'] as String,
       totalPrice: json['total_price'] as String?,
       notes: json['notes'] as String?,
       paymentMethod: json['payment_method'] == null
@@ -37,10 +34,7 @@ Map<String, dynamic> _$$OrderResponseModelImplToJson(
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'email': instance.email,
-      'gender': instance.gender,
-      'birthday': instance.birthday,
-      'phone': instance.phone,
+      'no_meja': instance.noMeja,
       'total_price': instance.totalPrice,
       'notes': instance.notes,
       'payment_method': instance.paymentMethod,

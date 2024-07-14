@@ -23,23 +23,24 @@ class EntryOrderNotifier extends AppProvider {
   }
 
   static const String NAME = 'NAME';
-  static const String GENDER = 'GENDER';
+  static const String NOMEJA = 'NOMEJA';
 
   bool _isShowDialogBuyyer = true;
   HashMap<String, String> _errorBuyer = HashMap();
   List<OrderItemEntity> _listOrderItem = [];
-  final List<DropdownMenuEntry<String>> _genderListDropdown = [
-    DropdownMenuEntry<String>(value: 'male', label: 'Laki-laki'),
-    DropdownMenuEntry<String>(value: 'female', label: 'Perempuan')
-  ];
-  String? _initialGender;
+  // final List<DropdownMenuEntry<String>> _genderListDropdown = [
+  //   DropdownMenuEntry<String>(value: 'male', label: 'Laki-laki'),
+  //   DropdownMenuEntry<String>(value: 'female', label: 'Perempuan')
+  // ];
+  // String? _initialGender;
 
   TextEditingController _nameController = TextEditingController();
   TextEditingController _noteController = TextEditingController();
-  TextEditingController _genderController = TextEditingController();
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _phoneController = TextEditingController();
-  TextEditingController _birthDayController = TextEditingController();
+  TextEditingController _noMejaController = TextEditingController();
+  // TextEditingController _genderController = TextEditingController();
+  // TextEditingController _emailController = TextEditingController();
+  // TextEditingController _phoneController = TextEditingController();
+  // TextEditingController _birthDayController = TextEditingController();
 
   int _totalPrice = 0;
   int _paymentMethodId = 0;
@@ -52,42 +53,46 @@ class EntryOrderNotifier extends AppProvider {
 
   List<OrderItemEntity> get listOrderItem => _listOrderItem;
 
-  List<DropdownMenuEntry<String>> get genderListDropdown => _genderListDropdown;
+  // // List<DropdownMenuEntry<String>> get genderListDropdown => _genderListDropdown;
 
-  String? get initialGender => _initialGender;
+  // // String? get initialGender => _initialGender;
 
   TextEditingController get nameController => _nameController;
 
   TextEditingController get noteController => _noteController;
 
-  TextEditingController get genderController => _genderController;
+  // // TextEditingController get genderController => _genderController;
 
-  TextEditingController get emailController => _emailController;
+  // TextEditingController get emailController => _emailController;
 
-  TextEditingController get phoneController => _phoneController;
+  // TextEditingController get phoneController => _phoneController;
 
-  TextEditingController get birthDayController => _birthDayController;
+  // TextEditingController get birthDayController => _birthDayController;
+
+TextEditingController get noMejaController => _noMejaController;
 
   OrderEntity get order {
     final name = _nameController.text;
-    final email = _emailController.text;
-    final gender = (_genderController.text.isNotEmpty)
-        ? _genderListDropdown
-            .where((element) => element.label == _genderController.text)
-            .first
-            .value
-        : '';
-    final birthDay = _birthDayController.text;
-    final phone = _phoneController.text;
+    // final email = _emailController.text;
+    // // final gender = (_genderController.text.isNotEmpty)
+        // ? _genderListDropdown
+            // .where((element) => element.label == _genderController.text)
+        //     .first
+        //     .value
+        // : '';
+    // final birthDay = _birthDayController.text;
+    // final phone = _phoneController.text;
     final note = _noteController.text;
+    final noMeja = _noMejaController.text;
 
     return OrderEntity(
         id: id,
         name: name,
-        email: email,
-        gender: gender,
-        birthday: birthDay,
-        phone: phone,
+        noMeja: noMeja,
+        // email: email,
+        // gender: gender,
+        // birthday: birthDay,
+        // phone: phone,
         notes: note,
         totalPrice: _totalPrice,
         items: _listOrderItem,
@@ -109,11 +114,12 @@ class EntryOrderNotifier extends AppProvider {
     if (response.success) {
       final order = response.data!;
       _nameController.text = order.name;
-      _initialGender = order.gender;
+      _noMejaController.text = order.noMeja ?? '';
+      // _initialGender = order.gender;
       _noteController.text = order.notes ?? '';
-      _emailController.text = order.email ?? '';
-      _phoneController.text = order.phone ?? '';
-      _birthDayController.text = order.birthday ?? '';
+      // _emailController.text = order.email ?? '';
+      // _phoneController.text = order.phone ?? '';
+      // _birthDayController.text = order.birthday ?? '';
       _listOrderItem.addAll(order.items);
       _totalPrice = order.totalPrice ?? 0;
       _paymentMethodId = order.paymentMethodId ?? 0;
@@ -149,7 +155,7 @@ class EntryOrderNotifier extends AppProvider {
     showLoading();
     _errorBuyer.clear();
     if (_nameController.text.isEmpty) _errorBuyer[NAME] = 'Harus Terisi';
-    if (_genderController.text.isEmpty) _errorBuyer[GENDER] = 'Harus Terisi';
+    if (_noMejaController.text.isEmpty) _errorBuyer[NOMEJA] = 'Harus Terisi';
     hideLoading();
   }
 

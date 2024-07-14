@@ -167,10 +167,10 @@ class EntryOrderScreen extends AppWidget<EntryOrderNotifier, int, void> {
               SizedBox(
                 height: 20,
               ),
-              _additionalInfoLayout(context),
-              SizedBox(
-                height: 20,
-              ),
+              // _additionalInfoLayout(context),
+              // SizedBox(
+              //   height: 20,
+              // ),
               Container(
                 width: double.maxFinite,
                 child: FilledButton(
@@ -204,17 +204,24 @@ class EntryOrderScreen extends AppWidget<EntryOrderNotifier, int, void> {
         SizedBox(
           height: 10,
         ),
-        SizedBox(
-          width: double.infinity,
-          child: DropdownMenu<String>(
-            initialSelection: notifier.initialGender,
-            expandedInsets: EdgeInsets.symmetric(horizontal: 1),
-            label: const Text('Gender'),
-            dropdownMenuEntries: notifier.genderListDropdown,
-            controller: notifier.genderController,
-            errorText: notifier.errorBuyer[EntryOrderNotifier.GENDER],
-          ),
+        TextField(
+          controller: notifier.noMejaController,
+          decoration: InputDecoration(
+              labelText: 'No Meja',
+              border: const OutlineInputBorder(),
+              errorText: notifier.errorBuyer[EntryOrderNotifier.NOMEJA]),
         ),
+        // SizedBox(
+        //   width: double.infinity,
+        //   child: DropdownMenu<String>(
+        //     initialSelection: notifier.initialGender,
+        //     expandedInsets: EdgeInsets.symmetric(horizontal: 1),
+        //     label: const Text('Gender'),
+        //     dropdownMenuEntries: notifier.genderListDropdown,
+        //     controller: notifier.genderController,
+        //     errorText: notifier.errorBuyer[EntryOrderNotifier.GENDER],
+        //   ),
+        // ),
         SizedBox(
           height: 10,
         ),
@@ -230,47 +237,47 @@ class EntryOrderScreen extends AppWidget<EntryOrderNotifier, int, void> {
     );
   }
 
-  _additionalInfoLayout(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          "Info Tambahan",
-          style: GlobalHelper.getTextTheme(context,
-              appTextStyle: AppTextStyle.TITLE_LARGE),
-        ),
-        SizedBox(
-          height: 10,
-        ),
-        TextField(
-          controller: notifier.emailController,
-          keyboardType: TextInputType.emailAddress,
-          decoration: InputDecoration(
-            labelText: 'Email',
-            border: const OutlineInputBorder(),
-          ),
-        ),
-        SizedBox(
-          height: 10,
-        ),
-        TextField(
-          controller: notifier.phoneController,
-          keyboardType: TextInputType.phone,
-          decoration: InputDecoration(
-              labelText: 'Phone', border: const OutlineInputBorder()),
-        ),
-        SizedBox(
-          height: 10,
-        ),
-        TextField(
-          readOnly: true,
-          onTap: () => _onPressBirthDayField(context),
-          controller: notifier.birthDayController,
-          decoration: InputDecoration(
-              labelText: 'Birthday', border: const OutlineInputBorder()),
-        ),
-      ],
-    );
-  }
+  // _additionalInfoLayout(BuildContext context) {
+  //   return Column(
+  //     children: [
+  //       Text(
+  //         "Info Tambahan",
+  //         style: GlobalHelper.getTextTheme(context,
+  //             appTextStyle: AppTextStyle.TITLE_LARGE),
+  //       ),
+  //       SizedBox(
+  //         height: 10,
+  //       ),
+  //       TextField(
+  //         controller: notifier.emailController,
+  //         keyboardType: TextInputType.emailAddress,
+  //         decoration: InputDecoration(
+  //           labelText: 'Email',
+  //           border: const OutlineInputBorder(),
+  //         ),
+  //       ),
+  //       SizedBox(
+  //         height: 10,
+  //       ),
+  //       TextField(
+  //         controller: notifier.phoneController,
+  //         keyboardType: TextInputType.phone,
+  //         decoration: InputDecoration(
+  //             labelText: 'Phone', border: const OutlineInputBorder()),
+  //       ),
+  //       SizedBox(
+  //         height: 10,
+  //       ),
+  //       TextField(
+  //         readOnly: true,
+  //         onTap: () => _onPressBirthDayField(context),
+  //         controller: notifier.birthDayController,
+  //         decoration: InputDecoration(
+  //             labelText: 'Birthday', border: const OutlineInputBorder()),
+  //       ),
+  //     ],
+  //   );
+  // }
 
   _onPressSaveBuyyer(BuildContext context) {
     Navigator.pop(context);
@@ -306,17 +313,17 @@ class EntryOrderScreen extends AppWidget<EntryOrderNotifier, int, void> {
     if (isDone == true) Navigator.pop(context);
   }
 
-  _onPressBirthDayField(BuildContext context) async {
-    DateTime? birthDay = await showDatePicker(
-      context: context,
-      initialDate: DateTime.now(),
-      firstDate: DateTime(DateTime.now().year - 100),
-      lastDate: DateTime.now(),
-    );
+  // _onPressBirthDayField(BuildContext context) async {
+  //   DateTime? birthDay = await showDatePicker(
+  //     context: context,
+  //     initialDate: DateTime.now(),
+  //     firstDate: DateTime(DateTime.now().year - 100),
+  //     lastDate: DateTime.now(),
+  //   );
 
-    notifier.birthDayController.text =
-        '${DateFormat('yyyy-MM-dd').format(birthDay!)}';
-  }
+  //   // notifier.birthDayController.text =
+  //   //     '${DateFormat('yyyy-MM-dd').format(birthDay!)}';
+  // }
 
   _onPressBarcode() {
     notifier.scan();

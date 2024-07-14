@@ -34,10 +34,7 @@ mixin _$OrderResponse {
     required TResult Function(
             int? id,
             String name,
-            String? email,
-            String gender,
-            String? birthday,
-            String? phone,
+            @JsonKey(name: 'no_meja') String noMeja,
             @JsonKey(name: 'total_price') String? totalPrice,
             String? notes,
             @JsonKey(name: 'payment_method') PaymentMethodEntity? paymentMethod,
@@ -60,10 +57,7 @@ mixin _$OrderResponse {
     TResult? Function(
             int? id,
             String name,
-            String? email,
-            String gender,
-            String? birthday,
-            String? phone,
+            @JsonKey(name: 'no_meja') String noMeja,
             @JsonKey(name: 'total_price') String? totalPrice,
             String? notes,
             @JsonKey(name: 'payment_method') PaymentMethodEntity? paymentMethod,
@@ -86,10 +80,7 @@ mixin _$OrderResponse {
     TResult Function(
             int? id,
             String name,
-            String? email,
-            String gender,
-            String? birthday,
-            String? phone,
+            @JsonKey(name: 'no_meja') String noMeja,
             @JsonKey(name: 'total_price') String? totalPrice,
             String? notes,
             @JsonKey(name: 'payment_method') PaymentMethodEntity? paymentMethod,
@@ -157,10 +148,7 @@ abstract class _$$OrderResponseModelImplCopyWith<$Res> {
   $Res call(
       {int? id,
       String name,
-      String? email,
-      String gender,
-      String? birthday,
-      String? phone,
+      @JsonKey(name: 'no_meja') String noMeja,
       @JsonKey(name: 'total_price') String? totalPrice,
       String? notes,
       @JsonKey(name: 'payment_method') PaymentMethodEntity? paymentMethod,
@@ -184,10 +172,7 @@ class __$$OrderResponseModelImplCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? name = null,
-    Object? email = freezed,
-    Object? gender = null,
-    Object? birthday = freezed,
-    Object? phone = freezed,
+    Object? noMeja = null,
     Object? totalPrice = freezed,
     Object? notes = freezed,
     Object? paymentMethod = freezed,
@@ -206,22 +191,10 @@ class __$$OrderResponseModelImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      gender: null == gender
-          ? _value.gender
-          : gender // ignore: cast_nullable_to_non_nullable
+      noMeja: null == noMeja
+          ? _value.noMeja
+          : noMeja // ignore: cast_nullable_to_non_nullable
               as String,
-      birthday: freezed == birthday
-          ? _value.birthday
-          : birthday // ignore: cast_nullable_to_non_nullable
-              as String?,
-      phone: freezed == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as String?,
       totalPrice: freezed == totalPrice
           ? _value.totalPrice
           : totalPrice // ignore: cast_nullable_to_non_nullable
@@ -264,10 +237,7 @@ class _$OrderResponseModelImpl implements OrderResponseModel {
   const _$OrderResponseModelImpl(
       {this.id,
       required this.name,
-      this.email,
-      required this.gender,
-      this.birthday,
-      this.phone,
+      @JsonKey(name: 'no_meja') required this.noMeja,
       @JsonKey(name: 'total_price') this.totalPrice,
       this.notes,
       @JsonKey(name: 'payment_method') this.paymentMethod,
@@ -288,13 +258,12 @@ class _$OrderResponseModelImpl implements OrderResponseModel {
   @override
   final String name;
   @override
-  final String? email;
-  @override
-  final String gender;
-  @override
-  final String? birthday;
-  @override
-  final String? phone;
+  @JsonKey(name: 'no_meja')
+  final String noMeja;
+// String? email,
+// required String gender,
+// String? birthday,
+// String? phone,
   @override
   @JsonKey(name: 'total_price')
   final String? totalPrice;
@@ -329,7 +298,7 @@ class _$OrderResponseModelImpl implements OrderResponseModel {
 
   @override
   String toString() {
-    return 'OrderResponse.model(id: $id, name: $name, email: $email, gender: $gender, birthday: $birthday, phone: $phone, totalPrice: $totalPrice, notes: $notes, paymentMethod: $paymentMethod, paymentMethodId: $paymentMethodId, paidAmount: $paidAmount, changeAmount: $changeAmount, items: $items, updatedAt: $updatedAt)';
+    return 'OrderResponse.model(id: $id, name: $name, noMeja: $noMeja, totalPrice: $totalPrice, notes: $notes, paymentMethod: $paymentMethod, paymentMethodId: $paymentMethodId, paidAmount: $paidAmount, changeAmount: $changeAmount, items: $items, updatedAt: $updatedAt)';
   }
 
   @override
@@ -339,11 +308,7 @@ class _$OrderResponseModelImpl implements OrderResponseModel {
             other is _$OrderResponseModelImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.gender, gender) || other.gender == gender) &&
-            (identical(other.birthday, birthday) ||
-                other.birthday == birthday) &&
-            (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.noMeja, noMeja) || other.noMeja == noMeja) &&
             (identical(other.totalPrice, totalPrice) ||
                 other.totalPrice == totalPrice) &&
             (identical(other.notes, notes) || other.notes == notes) &&
@@ -366,10 +331,7 @@ class _$OrderResponseModelImpl implements OrderResponseModel {
       runtimeType,
       id,
       name,
-      email,
-      gender,
-      birthday,
-      phone,
+      noMeja,
       totalPrice,
       notes,
       const DeepCollectionEquality().hash(paymentMethod),
@@ -392,10 +354,7 @@ class _$OrderResponseModelImpl implements OrderResponseModel {
     required TResult Function(
             int? id,
             String name,
-            String? email,
-            String gender,
-            String? birthday,
-            String? phone,
+            @JsonKey(name: 'no_meja') String noMeja,
             @JsonKey(name: 'total_price') String? totalPrice,
             String? notes,
             @JsonKey(name: 'payment_method') PaymentMethodEntity? paymentMethod,
@@ -412,21 +371,8 @@ class _$OrderResponseModelImpl implements OrderResponseModel {
             @JsonKey(name: 'unit_price') String unitPrice)
         itemModel,
   }) {
-    return model(
-        id,
-        name,
-        email,
-        gender,
-        birthday,
-        phone,
-        totalPrice,
-        notes,
-        paymentMethod,
-        paymentMethodId,
-        paidAmount,
-        changeAmount,
-        items,
-        updatedAt);
+    return model(id, name, noMeja, totalPrice, notes, paymentMethod,
+        paymentMethodId, paidAmount, changeAmount, items, updatedAt);
   }
 
   @override
@@ -435,10 +381,7 @@ class _$OrderResponseModelImpl implements OrderResponseModel {
     TResult? Function(
             int? id,
             String name,
-            String? email,
-            String gender,
-            String? birthday,
-            String? phone,
+            @JsonKey(name: 'no_meja') String noMeja,
             @JsonKey(name: 'total_price') String? totalPrice,
             String? notes,
             @JsonKey(name: 'payment_method') PaymentMethodEntity? paymentMethod,
@@ -455,21 +398,8 @@ class _$OrderResponseModelImpl implements OrderResponseModel {
             @JsonKey(name: 'unit_price') String unitPrice)?
         itemModel,
   }) {
-    return model?.call(
-        id,
-        name,
-        email,
-        gender,
-        birthday,
-        phone,
-        totalPrice,
-        notes,
-        paymentMethod,
-        paymentMethodId,
-        paidAmount,
-        changeAmount,
-        items,
-        updatedAt);
+    return model?.call(id, name, noMeja, totalPrice, notes, paymentMethod,
+        paymentMethodId, paidAmount, changeAmount, items, updatedAt);
   }
 
   @override
@@ -478,10 +408,7 @@ class _$OrderResponseModelImpl implements OrderResponseModel {
     TResult Function(
             int? id,
             String name,
-            String? email,
-            String gender,
-            String? birthday,
-            String? phone,
+            @JsonKey(name: 'no_meja') String noMeja,
             @JsonKey(name: 'total_price') String? totalPrice,
             String? notes,
             @JsonKey(name: 'payment_method') PaymentMethodEntity? paymentMethod,
@@ -500,21 +427,8 @@ class _$OrderResponseModelImpl implements OrderResponseModel {
     required TResult orElse(),
   }) {
     if (model != null) {
-      return model(
-          id,
-          name,
-          email,
-          gender,
-          birthday,
-          phone,
-          totalPrice,
-          notes,
-          paymentMethod,
-          paymentMethodId,
-          paidAmount,
-          changeAmount,
-          items,
-          updatedAt);
+      return model(id, name, noMeja, totalPrice, notes, paymentMethod,
+          paymentMethodId, paidAmount, changeAmount, items, updatedAt);
     }
     return orElse();
   }
@@ -562,10 +476,7 @@ abstract class OrderResponseModel implements OrderResponse {
   const factory OrderResponseModel(
       {final int? id,
       required final String name,
-      final String? email,
-      required final String gender,
-      final String? birthday,
-      final String? phone,
+      @JsonKey(name: 'no_meja') required final String noMeja,
       @JsonKey(name: 'total_price') final String? totalPrice,
       final String? notes,
       @JsonKey(name: 'payment_method') final PaymentMethodEntity? paymentMethod,
@@ -581,10 +492,11 @@ abstract class OrderResponseModel implements OrderResponse {
 
   int? get id;
   String get name;
-  String? get email;
-  String get gender;
-  String? get birthday;
-  String? get phone;
+  @JsonKey(name: 'no_meja')
+  String get noMeja; // String? email,
+// required String gender,
+// String? birthday,
+// String? phone,
   @JsonKey(name: 'total_price')
   String? get totalPrice;
   String? get notes;
@@ -723,10 +635,7 @@ class _$OrderResponseItemModelImpl implements OrderResponseItemModel {
     required TResult Function(
             int? id,
             String name,
-            String? email,
-            String gender,
-            String? birthday,
-            String? phone,
+            @JsonKey(name: 'no_meja') String noMeja,
             @JsonKey(name: 'total_price') String? totalPrice,
             String? notes,
             @JsonKey(name: 'payment_method') PaymentMethodEntity? paymentMethod,
@@ -752,10 +661,7 @@ class _$OrderResponseItemModelImpl implements OrderResponseItemModel {
     TResult? Function(
             int? id,
             String name,
-            String? email,
-            String gender,
-            String? birthday,
-            String? phone,
+            @JsonKey(name: 'no_meja') String noMeja,
             @JsonKey(name: 'total_price') String? totalPrice,
             String? notes,
             @JsonKey(name: 'payment_method') PaymentMethodEntity? paymentMethod,
@@ -781,10 +687,7 @@ class _$OrderResponseItemModelImpl implements OrderResponseItemModel {
     TResult Function(
             int? id,
             String name,
-            String? email,
-            String gender,
-            String? birthday,
-            String? phone,
+            @JsonKey(name: 'no_meja') String noMeja,
             @JsonKey(name: 'total_price') String? totalPrice,
             String? notes,
             @JsonKey(name: 'payment_method') PaymentMethodEntity? paymentMethod,

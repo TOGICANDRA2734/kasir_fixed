@@ -94,71 +94,71 @@ class CheckoutScreen extends AppWidget<CheckoutNotifier, OrderEntity, void> {
           SizedBox(
             height: 5,
           ),
-          Row(
-            children: [
-              Icon((notifier.order.gender == 'male')
-                  ? Icons.male_rounded
-                  : Icons.female_rounded),
-              SizedBox(
-                width: 10,
-              ),
-              Expanded(
-                  child: Text(': ${notifier.order.gender}',
-                      style: GlobalHelper.getTextTheme(context,
-                          appTextStyle: AppTextStyle.BODY_LARGE)))
-            ],
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Row(
-            children: [
-              Icon(Icons.mail_rounded),
-              SizedBox(
-                width: 10,
-              ),
-              Expanded(
-                  child: Text(
-                      ': ${(notifier.order.email?.isNotEmpty ?? false) ? notifier.order.email : '-'}',
-                      style: GlobalHelper.getTextTheme(context,
-                          appTextStyle: AppTextStyle.BODY_LARGE)))
-            ],
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Row(
-            children: [
-              Icon(Icons.phone_rounded),
-              SizedBox(
-                width: 10,
-              ),
-              Expanded(
-                  child: Text(
-                      ': ${(notifier.order.phone?.isNotEmpty ?? false) ? notifier.order.phone : '-'}',
-                      style: GlobalHelper.getTextTheme(context,
-                          appTextStyle: AppTextStyle.BODY_LARGE)))
-            ],
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Row(
-            children: [
-              Icon(Icons.child_care_rounded),
-              SizedBox(
-                width: 10,
-              ),
-              Expanded(
-                  child: Text(
-                      ': ${(notifier.order.birthday?.isNotEmpty ?? false) ? notifier.order.birthday : '-'}',
-                      style: GlobalHelper.getTextTheme(context,
-                          appTextStyle: AppTextStyle.BODY_LARGE)))
-            ],
-          ),
-          SizedBox(
-            height: 5,
-          ),
+          // Row(
+          //   children: [
+          //     Icon((notifier.order.gender == 'male')
+          //         ? Icons.male_rounded
+          //         : Icons.female_rounded),
+          //     SizedBox(
+          //       width: 10,
+          //     ),
+          //     Expanded(
+          //         child: Text(': ${notifier.order.gender}',
+          //             style: GlobalHelper.getTextTheme(context,
+          //                 appTextStyle: AppTextStyle.BODY_LARGE)))
+          //   ],
+          // ),
+          // SizedBox(
+          //   height: 5,
+          // ),
+          // Row(
+          //   children: [
+          //     Icon(Icons.mail_rounded),
+          //     SizedBox(
+          //       width: 10,
+          //     ),
+          //     Expanded(
+          //         child: Text(
+          //             ': ${(notifier.order.email?.isNotEmpty ?? false) ? notifier.order.email : '-'}',
+          //             style: GlobalHelper.getTextTheme(context,
+          //                 appTextStyle: AppTextStyle.BODY_LARGE)))
+          //   ],
+          // ),
+          // SizedBox(
+          //   height: 5,
+          // ),
+          // Row(
+          //   children: [
+          //     Icon(Icons.phone_rounded),
+          //     SizedBox(
+          //       width: 10,
+          //     ),
+          //     Expanded(
+          //         child: Text(
+          //             ': ${(notifier.order.phone?.isNotEmpty ?? false) ? notifier.order.phone : '-'}',
+          //             style: GlobalHelper.getTextTheme(context,
+          //                 appTextStyle: AppTextStyle.BODY_LARGE)))
+          //   ],
+          // ),
+          // SizedBox(
+          //   height: 5,
+          // ),
+          // Row(
+          //   children: [
+          //     Icon(Icons.child_care_rounded),
+          //     SizedBox(
+          //       width: 10,
+          //     ),
+          //     Expanded(
+          //         child: Text(
+          //             ': ${(notifier.order.birthday?.isNotEmpty ?? false) ? notifier.order.birthday : '-'}',
+          //             style: GlobalHelper.getTextTheme(context,
+          //                 appTextStyle: AppTextStyle.BODY_LARGE)))
+          //   ],
+          // ),
+          // SizedBox(
+          //   height: 5,
+          // ),
           Text('Notes :',
               style: GlobalHelper.getTextTheme(context,
                   appTextStyle: AppTextStyle.BODY_LARGE)),
